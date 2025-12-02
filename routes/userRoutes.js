@@ -1,18 +1,18 @@
 import express from "express";
 import 
-  createUser
+  createAdmin
 //   getAllUsers,
 //   getUserById,
 //   updateUser,
 //   deleteUser,
 //   loginUser,
 //   getUsersByCompany
- from "../controllers/users/userController.js";
+ from "../controllers/admin/createAdmin.js";
 
 const router = express.Router();
 
 // Create new user
-router.post("/create", createUser);
+router.post("/create", createAdmin);
 
 // // Login user
 // router.post("/login", loginUser);
