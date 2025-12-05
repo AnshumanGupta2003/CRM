@@ -8,23 +8,21 @@ const adminSchema = new mongoose.Schema(
       trim: true,
     },
 
-    // companyId: {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: "Company",
-    //   required: true,
-    // },
+    companyId: {
+      type: mongoose.Schema.Types.ObjectId,
+    },
 
     username: {
       type: String,
       required: true,
-    //   unique: true,
+      unique: true,
       trim: true,
     },
 
     email: {
       type: String,
       required: true,
-    //   unique: true,
+      unique: true,
       lowercase: true,
       trim: true,
     },
@@ -41,7 +39,7 @@ const adminSchema = new mongoose.Schema(
 
     phoneNumber: {
       type: String,
-      required: true,
+      // required: true,
     },
 
     status: {
