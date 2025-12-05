@@ -1,18 +1,15 @@
 import express from "express";
-import 
-  createAdmin
-//   getAllUsers,
-//   getUserById,
-//   updateUser,
-//   deleteUser,
-//   loginUser,
-//   getUsersByCompany
- from "../controllers/admin/createAdmin.js";
+import createAdmin from "../controllers/admin/createAdmin.js";
+import editAdmin from "../controllers/admin/editAdmin.js";
+import adminValidator from "../validators/adminValidator.js";
 
 const router = express.Router();
 
 // Create new user
-router.post("/create", createAdmin);
+router.post("/create", adminValidator ,createAdmin);
+
+// Edit admin details
+router.patch("/edit/:id", editAdmin);
 
 
 
