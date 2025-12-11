@@ -5,8 +5,10 @@ import adminValidator from "../validators/adminValidator.js";
 import deleteAdmin from "../controllers/admin/deleteAdmin.js";
 import getUserById from "../controllers/admin/getUserByid.js";
 import getAllAdmins from "../controllers/admin/getAllAdmin.js";
+import loginValidator from "../validators/loginValidator.js";
+import adminLogin from "../controllers/admin/adminLogin.js";
 import {authMiddleware} from "../middleware/auth.js";
-    
+
 
 const router = express.Router();
 
@@ -17,7 +19,7 @@ router.post("/create", adminValidator ,createAdmin);
 router.patch("/edit/:id", editAdmin);
 router.delete("/delete/:id", deleteAdmin);
 router.get("/getUserById/:id", getUserById);
- 
+router.get("/login", loginValidator, adminLogin)
 //router.get("/getAllAdmin/", getAllAdmins);
 router.get("/getalladmin", authMiddleware, getAllAdmins);
 
