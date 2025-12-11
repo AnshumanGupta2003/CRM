@@ -8,9 +8,9 @@ const editAdmin = async (req, res) => {
         const adminId = req.params.id;
         const updateData = req.body;
         const options = { new: true }; // To return the updated document
-
+console.log(adminId, updateData);
         const updatedAdmin = await adminSchema.findByIdAndUpdate(adminId, updateData, options);
-
+console.log(updatedAdmin);
         if (!updatedAdmin) {
             return errorResponse(res, 404, "Admin not found");
         }   
