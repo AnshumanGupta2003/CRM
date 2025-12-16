@@ -4,7 +4,7 @@ import {
   successResponse,
 } from "../../utils/responseHandlers.js";
 
-const deleteAdmin = async (req, res) => {
+const deleteAdmin = async (req, res, next) => {
   try {
     const { id } = req.params;  
 
@@ -27,9 +27,7 @@ const deleteAdmin = async (req, res) => {
 
   } catch (error) {
     console.error("Error deleting admin:", error);
-    return errorResponse(res, 500, "Failed to delete admin", {
-      error: error.message,
-    });
+    next(error);
   }
 };
 

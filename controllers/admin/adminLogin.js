@@ -15,7 +15,7 @@ const adminLogin = async (req, res) => {
       return res.status(401).json({ message: "Invalid email or password" });
     }
 
-    const token = generateToken({ username: username, password: password });
+    const token = generateToken({ username: username, password: password, id: admin._id });
 
     if (!token) {
       return errorResponse(res, 500, "Token generation failed");

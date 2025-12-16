@@ -7,6 +7,7 @@ import {
 const getUserById = async (req, res) => {
   try {
     const { id } = req.params;
+    console.log("Fetching user with ID:", req.admin);
 
     const user = await adminSchema.findById(id);
 
