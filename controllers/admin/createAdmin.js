@@ -4,7 +4,7 @@ import {
   successResponse,
 } from "../../utils/responseHandlers.js";
 
-const createUser = async (req, res) => {
+const createUser = async (req, res, next) => {
   // Logic to create a new user
   try {
     const {
@@ -32,9 +32,7 @@ const createUser = async (req, res) => {
     });
   } catch (error) {
     console.error("Error creating user:", error);
-    return errorResponse(res, 500, "Failed to create user", {
-      error: error.message,
-    });
+    next(error);
   }
 };
 
