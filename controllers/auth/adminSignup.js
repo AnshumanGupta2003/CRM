@@ -4,7 +4,7 @@ import {
   successResponse,
 } from "../../utils/responseHandlers.js";
 
-const createUser = async (req, res, next) => {
+const adminSignup = async (req, res, next) => {
   // Logic to create a new user
   try {
     const {
@@ -36,4 +36,4 @@ const createUser = async (req, res, next) => {
   }
 };
 
-export default createUser;
+export default adminSignup;

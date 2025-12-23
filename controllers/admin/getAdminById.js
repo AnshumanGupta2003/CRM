@@ -4,7 +4,7 @@ import {
   successResponse,
 } from "../../utils/responseHandlers.js";
 
-const getUserById = async (req, res) => {
+const getAdminById = async (req, res) => {
   try {
     const { id } = req.params;
     console.log("Fetching user with ID:", req.admin);
@@ -27,4 +27,4 @@ const getUserById = async (req, res) => {
   }
 };
 
-export default getUserById;
+export default getAdminById;

@@ -1,12 +1,12 @@
 import express from "express";
-import createAdmin from "../controllers/admin/createAdmin.js";
+import adminSignup from "../controllers/auth/adminSignup.js";
 import editAdmin from "../controllers/admin/editAdmin.js";
 import adminValidator from "../validators/adminValidator.js";
 import deleteAdmin from "../controllers/admin/deleteAdmin.js";
-import getUserById from "../controllers/admin/getUserByid.js";
+import getAdminById from "../controllers/admin/getAdminById.js";
 import getAllAdmins from "../controllers/admin/getAllAdmin.js";
 import loginValidator from "../validators/loginValidator.js";
-import adminLogin from "../controllers/admin/adminLogin.js";
+import adminLogin from "../controllers/auth/adminLogin.js";
 import {authMiddleware} from "../middleware/auth.js";
 import { verifyMiddlewareToken } from "../utils/jwt.js";
 
@@ -14,12 +14,12 @@ import { verifyMiddlewareToken } from "../utils/jwt.js";
 const router = express.Router();
 
 // Create new user
-router.post("/create", adminValidator ,createAdmin);
+ 
 
 // Edit admin details
 router.patch("/edit/:id", editAdmin);
 router.delete("/delete/:id", deleteAdmin);
-router.get("/getAdminById/:id", [verifyMiddlewareToken], getUserById);
+router.get("/getAdminById/:id", getAdminById);
 router.get("/login", loginValidator, adminLogin)
 //router.get("/getAllAdmin/", getAllAdmins);
 router.get("/getalladmin", authMiddleware, getAllAdmins);
