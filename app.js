@@ -2,10 +2,11 @@ import express from "express";
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
-import loginRoutes from "./routes/loginRoutes.js";
+ 
 import connectDB from "./config/db.js";
 import { globalErrorHandler } from "./middleware/globalError.js";
 import { verifyMiddlewareToken } from "./utils/jwt.js";
+import authRoutes from "./routes/authRoutes.js";
 
 
 dotenv.config();
@@ -18,7 +19,7 @@ connectDB();
 
 app.use("/api/users", userRoutes);
 app.use("/api/admin", verifyMiddlewareToken , adminRoutes);
-app.use("/api/login", loginRoutes);
+app.use("/api/auth", authRoutes);
 
 app.use(globalErrorHandler);
 
