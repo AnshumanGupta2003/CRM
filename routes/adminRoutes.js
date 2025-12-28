@@ -13,16 +13,19 @@ import { verifyMiddlewareToken } from "../utils/jwt.js";
 
 const router = express.Router();
 
-// Create new user
  
 
 // Edit admin details
 router.patch("/edit/:id", editAdmin);
+
+// Delete an admin
 router.delete("/delete/:id", deleteAdmin);
+
+// Get admin by ID
 router.get("/getAdminById/:id", getAdminById);
-router.get("/login", loginValidator, adminLogin)
-//router.get("/getAllAdmin/", getAllAdmins);
-router.get("/getalladmin", authMiddleware, getAllAdmins);
+
+// Get all admins
+router.get("/getalladmin", [authMiddleware], getAllAdmins);
 
 
 

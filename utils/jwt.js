@@ -3,7 +3,7 @@ import adminSchema from "../models/adminModels.js";
 import { errorResponse } from "./responseHandlers.js";
 
 const JWT_SECRET = process.env.JWT_SECRET || "your_super_secret_key";
-const JWT_EXPIRES_IN = "7d"; // token validity
+const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || "7d"; // token validity
 
 // Generate Token
 export const generateToken = (payload) => {
