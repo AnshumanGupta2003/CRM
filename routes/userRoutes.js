@@ -1,13 +1,15 @@
 import express from "express";
+import registerUser from "../controllers/users/registerUser.js";
+import loginUser from "../controllers/users/loginUser.js";
  
 
 const router = express.Router();
 
 // Create new user
-// router.post("/create", createAdmin);
+ router.post("/create", registerUser);
 
 // // Login user
-// router.post("/login", loginUser);
+  router.post("/login", loginUser);
 
 // // Get all users
 // router.get("/", getAllUsers);
