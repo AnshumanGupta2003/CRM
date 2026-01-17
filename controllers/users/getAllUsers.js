@@ -1,5 +1,5 @@
-import usersModel from "../../models/usersModel";
-import { successResponse, errorResponse } from "../../utils/responseHandlers";
+import usersModel from "../../models/usersModel.js";
+import { successResponse, errorResponse } from "../../utils/responseHandlers.js";
 
 const getAllUsers = async (req, res) => {
   try {
