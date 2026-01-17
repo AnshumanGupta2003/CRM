@@ -2,14 +2,14 @@ import express from "express";
 import loginValidator from "../validators/loginValidator.js";
 import adminSignup from "../controllers/auth/adminSignup.js";
 import adminValidator from "../validators/adminValidator.js";
-import adminLogin from "../controllers/auth/adminLogin.js";
+import login from "../controllers/auth/login.js";
 
 
 const router = express.Router();
 
 
 
-router.get("/adminLogin", loginValidator, adminLogin)
+router.get("/login", loginValidator, login)
 // router.get("/user", loginValidator, userLogin)
 
 router.post("/adminSignup", adminValidator ,adminSignup);

@@ -31,8 +31,10 @@ const getAllAdmins = async (req, res) => {
       ];
     }
 
-    if (filter) {
-      matchStage.status = filter; // example filter
+    if (filter == "status") {
+      matchStage.status = filter;
+    } else if (filter == "role") {
+      matchStage.role = filter;
     }
 
     const pipeline = [
