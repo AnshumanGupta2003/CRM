@@ -1,7 +1,7 @@
 import express from "express";
 import registerUser from "../controllers/users/registerUser.js";
 import loginUser from "../controllers/users/loginUser.js";
- 
+ import getUsersById from "../controllers/users/getUserById.js";
 
 const router = express.Router();
 
@@ -15,7 +15,7 @@ const router = express.Router();
 // router.get("/", getAllUsers);
 
 // // Get user by ID
-// router.get("/:id", getUserById);
+ router.get("/:id", getUsersById);
 
 // // Update user
 // router.put("/:id", updateUser);
