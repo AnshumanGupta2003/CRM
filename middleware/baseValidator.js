@@ -1,11 +1,12 @@
 
 const baseValidator = (req, res, next) => {
 
-    const apiKey = req.headers["x-api-key"];
-
-    const actualApiKey = process.env.API_KEY;
-
-    if (!apiKey || apiKey !== actualApiKey) {
+    const actualApiKey = req.headers["x-api-key"];
+    const apiKey = process.env.API_KEY;
+    
+    if (!apiKey) next();
+    
+    if (apiKey !== actualApiKey) {
         return res.status(401).json({ message: "Unauthorized: Invalid API Key" });
     }
    

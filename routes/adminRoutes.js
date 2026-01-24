@@ -22,7 +22,7 @@ router.get("/getAdminById/:id", getAdminById);
 
 // Get all admins
 router.get("/getalladmin", [authMiddleware], getAllAdmins);
- router.post("/registerCompany", registerCompany)
+router.post("/registerCompany", registerCompany)
 
 
 
